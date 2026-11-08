@@ -51,3 +51,4 @@ class HealthResponse(BaseModel):
     model: Optional[str] = None
     model_version: Optional[str] = None
     timestamp: str
+    detail: Optional[str] = None

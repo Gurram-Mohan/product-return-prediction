@@ -1,5 +1,6 @@
 # Development / CI dependencies: linting and automated testing.
+# (Dev tooling does not touch the model artifact, so bounded ranges are fine.)
 -r requirements.txt
 pytest>=8.0
-httpx>=0.27
+httpx>=0.27,<1
 ruff>=0.8
