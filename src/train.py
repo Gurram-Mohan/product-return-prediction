@@ -82,7 +82,7 @@ def get_candidate_models() -> dict:
     """
     return {
         "Logistic Regression": LogisticRegression(
-            C=0.1,
+            C=0.2,  # v1.1.0: relaxed from 0.1 after CV comparison
             max_iter=1000,
             class_weight="balanced",
             random_state=RANDOM_STATE,

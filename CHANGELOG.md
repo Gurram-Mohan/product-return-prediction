@@ -4,6 +4,25 @@ All notable changes to the Product Return Prediction system are documented
 here. The format follows [Keep a Changelog](https://keepachangelog.com/) and
 versioning is semantic.
 
+## [1.1.0] - 2026-11-08
+
+### Changed
+- Model configuration: Logistic Regression regularization relaxed
+  (`C` 0.1 -> 0.2) after cross-validated comparison (CV ROC-AUC 0.5701 vs
+  0.5712 - statistically equivalent, slightly smoother decision boundary).
+- `MODEL_VERSION` bumped to 1.1.0; `/health` now reports the new version so
+  a running container can be tied to its source commit and image tag.
+
+### Added
+- `GET /model-info` endpoint exposing training metadata (metrics of all
+  candidate models, feature lists, training environment) from the running
+  service.
+- Test coverage for the new endpoint (29 tests total).
+
+### Fixed
+- Exact dependency pinning so the Docker image can load the committed
+  scikit-learn model artifact (caught by the CI smoke test in run #1).
+
 ## [1.0.0] - 2026-11-08
 
 ### Added

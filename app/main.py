@@ -104,6 +104,16 @@ def health() -> HealthResponse:
     return HealthResponse(**payload)
 
 
+@app.get("/model-info", tags=["meta"])
+def model_info_endpoint() -> JSONResponse:
+    """Training metadata for the deployed model (metrics, features, versions).
+
+    New in v1.1.0: lets consumers inspect the model card of the running
+    container without accessing the repository.
+    """
+    return JSONResponse({"model_version": MODEL_VERSION, **model_info})
+
+
 @app.post("/predict", response_model=PredictionResponse, tags=["prediction"])
 def predict(order: OrderFeatures) -> PredictionResponse:
     """Predict whether the given order will be returned."""

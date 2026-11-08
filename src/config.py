@@ -45,7 +45,7 @@ TEST_SIZE = 0.20
 
 # Model / service version (semantic). Bumped whenever the model or the
 # application behaviour changes so that /health can prove which build is live.
-MODEL_VERSION = "1.0.0"
+MODEL_VERSION = "1.1.0"
 
 # Decision threshold used by the API to convert return probability into a
 # label. Exposed as an environment variable so it can be tuned per deployment

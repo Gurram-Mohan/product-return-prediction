@@ -121,17 +121,17 @@ orders, target rate 22.6 % returned) is cleaned by `src/data_loader.py`:
 ## 6. Models & evaluation (Task 3)
 
 Three classifiers trained on a stratified 80/20 split (`random_state=42`),
-evaluated on the held-out test set:
+evaluated on the held-out test set (v1.1.0 results):
 
 | Model | Accuracy | Precision | Recall | F1 | ROC-AUC |
 |---|---|---|---|---|---|
-| **Logistic Regression** (C=0.1, balanced) | 0.5917 | 0.2708 | 0.4815 | **0.3467** | **0.5750** |
+| **Logistic Regression** (C=0.2, balanced) | 0.6042 | 0.2796 | 0.4815 | **0.3537** | **0.5746** |
 | Random Forest (300 trees, d=6) | 0.7000 | 0.3393 | 0.3519 | 0.3455 | 0.5593 |
 | Gradient Boosting (lr=0.05, d=2) | 0.7625 | 0.2857 | 0.0370 | 0.0656 | 0.5708 |
 
 **Best model: Logistic Regression** (highest F1 and ROC-AUC) → saved to
 `artifacts/model.pkl` with its preprocessor; full metrics in
-`artifacts/model_info.json`.
+`artifacts/model_info.json` — also exposed live by `GET /model-info`.
 
 > **Honest note on performance:** the dataset carries a weak, noisy signal —
 > the strongest predictors are `Damaged_Package_Flag` (40.6 % return rate vs

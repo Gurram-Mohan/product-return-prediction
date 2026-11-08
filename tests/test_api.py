@@ -101,3 +101,13 @@ def test_predict_rejects_missing_required_field():
 def test_predict_rejects_invalid_rating():
     bad = {**VALID_ORDER, "customer_rating_preorder": 9}
     assert client.post("/predict", json=bad).status_code == 422
+
+
+def test_model_info_endpoint_returns_training_metadata():
+    resp = client.get("/model-info")
+    assert resp.status_code == 200
+    body = resp.json()
+    assert body["model_version"]
+    assert body["best_model"]
+    assert isinstance(body["metrics"], list) and len(body["metrics"]) >= 2
+    assert "numeric" in body["features"]
