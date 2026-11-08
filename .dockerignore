@@ -1,0 +1,15 @@
+# Keep the Docker build context minimal: the image only needs
+# requirements.txt, src/, app/ and artifacts/.
+.git
+.github
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.venv/
+venv/
+tests/
+data/
+*.md
+.env
+.DS_Store

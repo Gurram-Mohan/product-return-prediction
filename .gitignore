@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# Tooling caches
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+
+# Environment / OS
+.env
+.DS_Store
+
+# Note: artifacts/ (trained model + metadata) IS committed on purpose,
+# as required by the assignment (repo must contain the trained model).

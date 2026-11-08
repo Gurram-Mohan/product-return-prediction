@@ -1,0 +1,76 @@
+{
+  "model_version": "1.0.0",
+  "trained_at_utc": "2026-11-08T12:28:54+00:00",
+  "best_model": "Logistic Regression",
+  "dataset": {
+    "path": "Section7_Q4_Ecommerce_Product_Return_CICD.csv",
+    "rows": 1200,
+    "train_rows": 960,
+    "test_rows": 240,
+    "return_rate": 0.2258
+  },
+  "metrics": [
+    {
+      "model": "Logistic Regression",
+      "accuracy": 0.5917,
+      "precision": 0.2708,
+      "recall": 0.4815,
+      "f1_score": 0.3467,
+      "roc_auc": 0.575
+    },
+    {
+      "model": "Random Forest",
+      "accuracy": 0.7,
+      "precision": 0.3393,
+      "recall": 0.3519,
+      "f1_score": 0.3455,
+      "roc_auc": 0.5593
+    },
+    {
+      "model": "Gradient Boosting",
+      "accuracy": 0.7625,
+      "precision": 0.2857,
+      "recall": 0.037,
+      "f1_score": 0.0656,
+      "roc_auc": 0.5708
+    }
+  ],
+  "best_model_classification_report": "              precision    recall  f1-score   support\n\nNot Returned       0.81      0.62      0.70       186\n    Returned       0.27      0.48      0.35        54\n\n    accuracy                           0.59       240\n   macro avg       0.54      0.55      0.52       240\nweighted avg       0.69      0.59      0.62       240\n",
+  "best_model_confusion_matrix": [
+    [
+      116,
+      70
+    ],
+    [
+      28,
+      26
+    ]
+  ],
+  "features": {
+    "numeric": [
+      "Product_Price_INR",
+      "Discount_Percent",
+      "Expected_Delivery_Days",
+      "Actual_Delivery_Days",
+      "Customer_Rating_PreOrder",
+      "Previous_Returns",
+      "Previous_Orders",
+      "Effective_Price_INR",
+      "Delivery_Delay_Days",
+      "Is_Late_Delivery",
+      "Customer_Return_Rate"
+    ],
+    "categorical": [
+      "Product_Category",
+      "Payment_Method",
+      "Damaged_Package_Flag",
+      "Package_Size",
+      "Promotion_Active"
+    ]
+  },
+  "environment": {
+    "python": "3.13.16",
+    "scikit_learn": "1.6.1",
+    "pandas": "2.2.3"
+  }
+}
